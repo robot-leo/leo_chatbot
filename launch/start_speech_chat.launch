@@ -1,0 +1,21 @@
+<launch>
+
+	<include file="$(find speak_out_loud)/launch/speak_out_loud.launch"/>
+
+	<param name="aiml_path" value="/home/ros/catkin_ws/src/ros_aiml/data" />
+	<node name="aiml_server" pkg="ros_aiml" type="aiml_server.py" output="screen">
+	</node>
+
+
+	
+	<node name="aiml_tts" pkg="ros_aiml" type="aiml_tts_client.py" output="screen">
+	</node>
+
+
+	<node name="aiml_speech_recog" pkg="ros_aiml" type="aiml_speech_recog_client.py" output="screen">
+	</node>
+
+
+
+
+</launch>
